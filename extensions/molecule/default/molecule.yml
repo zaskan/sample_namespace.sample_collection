@@ -10,8 +10,9 @@ driver:
     ansible_connection_options:
       connection: local
 platforms:
-  - name: instance
+  - name: Dev
     image: quay.io/zaskan/ansible-dev-tools:1.0
+    workingDir: '/tmp'
 provisioner:
   name: ansible
   # Failing to write the ansible into /.ansible/tmp
