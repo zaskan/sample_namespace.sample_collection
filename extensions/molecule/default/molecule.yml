@@ -11,8 +11,7 @@ driver:
       connection: local
 platforms:
   - name: instance
-    image: quay.io/centos/centos:stream8
-    pre_build_image: true
+    image: quay.io/zaskan/ansible-dev-tools:1.0
 provisioner:
   name: ansible
   # Failing to write the ansible into /.ansible/tmp
