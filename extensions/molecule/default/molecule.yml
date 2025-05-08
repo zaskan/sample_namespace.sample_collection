@@ -10,7 +10,7 @@ driver:
     ansible_connection_options:
       connection: local
 platforms:
-  name: test
+  - name: test
 provisioner:
   name: ansible
   # Failing to write the ansible into /.ansible/tmp
