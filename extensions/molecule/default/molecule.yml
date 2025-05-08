@@ -1,8 +1,6 @@
 ---
 dependency:
   name: galaxy
-  options:
-    requirements-file: requirements.yml
 driver:
   name: default
   options:
@@ -10,9 +8,9 @@ driver:
     ansible_connection_options:
       connection: local
 platforms:
-  - name: Dev
-    image: quay.io/zaskan/ansible-dev-tools:1.0
-    workingDir: '/tmp'
+  - name: localhost
+    ansible_connection: local
+    become: true
 provisioner:
   name: ansible
   # Failing to write the ansible into /.ansible/tmp
@@ -29,14 +27,11 @@ provisioner:
     group_vars:
       all:
         backup_file_molecule_namespace: ${DEVWORKSPACE_NAMESPACE}
-        backup_file_molecule_pip_dependencies:
-          - kubernetes
 verifier:
   name: ansible
 scenario:
   name: default
   test_sequence:
-    - dependency
     - syntax
     - create
     - converge

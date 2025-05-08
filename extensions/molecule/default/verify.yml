@@ -10,10 +10,10 @@
   #   __backup_file_base_suffix: "{{ backup_file_base }}{{ backup_file_dest_suffix }}"
   #   __backup_file_destination_path: "{{ backup_file_dest_folder }}/{{ backup_file_dest_suffix }}"
   tasks:
-    # TODO: change this to not be hard coded?
+
     - name: Verifier | include default role vars
       ansible.builtin.include_vars:
-        dir: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}/../roles/backup_file/defaults/"
+        dir: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}/defaults/"
         extensions:
           - 'yml'
 

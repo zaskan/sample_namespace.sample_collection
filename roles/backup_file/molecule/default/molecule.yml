@@ -27,8 +27,6 @@ provisioner:
     group_vars:
       all:
         backup_file_molecule_namespace: ${DEVWORKSPACE_NAMESPACE}
-        backup_file_molecule_pip_dependencies:
-          - kubernetes
 verifier:
   name: ansible
 scenario:

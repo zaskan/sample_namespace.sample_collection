@@ -6,4 +6,4 @@
   tasks:
     - name: "Include backup_file"
       ansible.builtin.include_role:
-        name: "sample_namespace.sample_collection.backup_file"
+        name: "backup_file"
