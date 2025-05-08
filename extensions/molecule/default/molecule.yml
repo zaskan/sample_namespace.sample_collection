@@ -9,6 +9,8 @@ driver:
     managed: true
     ansible_connection_options:
       connection: local
+platforms:
+  name: test
 provisioner:
   name: ansible
   # Failing to write the ansible into /.ansible/tmp
